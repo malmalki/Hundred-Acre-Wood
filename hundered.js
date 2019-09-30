@@ -42,4 +42,4 @@ kanga.north=eeyore;
 eeyore.south=kanga;
 eeyore.east=heffalumps;
 
-HashChangeEvent.west=eeyore
+heffalumps.west=eeyore
