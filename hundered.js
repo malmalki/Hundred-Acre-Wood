@@ -15,6 +15,8 @@ tigger.north = pooh; // add more attributes, where we are actually storing the m
 pooh.south = tigger;
 pooh.east = bees;
 pooh.west = piglet;
+pooh.north = robin;
+
 
 bees.west = pooh;
 bees.north = rabbit;
