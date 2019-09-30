@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var tigger = {
+            character: "Tigger",
+            greet: function(){
+                console.log("The wonderful thing about Tiggers is Tiggers are wonderful things!");
+            }
+        };
+        
+        
+        var pooh = { 
+            character: "Winnie the Pooh",
+            greet: function(){
+                console.log("oh brother ");
+            }
+        };
+
+        var bees = { 
+            character: "Bees",
+            greet: function(){
+                console.log("welcome to bees");
+            }
+         };
+        var piglet = { 
+            character: "Piglet",
+            greet: function(){
+                console.log("Oh dear i wasn't expiting company!");
+            }
+         };
+
+        var robin = { 
+            character: "Christopher Robin",
+            greet: function(){
+                console.log("welcome to robin ");
+            }
+        };
+        var owl = { 
+            character: "Owl",
+            greet: function(){
+                console.log("welcome to Owl ");
+            }
+        };
+        var rabbit = { 
+            character: "Rabbit",
+            greet: function(){
+                console.log("welcome to rabbit ");
+            }
+        };
+        var gopher = { 
+            character: "Gopher",
+            greet: function(){
+                console.log("welcome to Gopher ");
+            }
+        };
+        var kanga = { 
+            character: "Kanga",
+            greet: function(){
+                console.log("welcome to Kanga ");
+            }
+        };
+        var eeyore = { 
+            character: "Eeyore",
+            greet: function(){
+                console.log("welcome to Eeyore ");
+            }
+        };
+        var heffalumps = { 
+            character: "Heffalumps",
+            greet: function(){
+                console.log("welcome to Heffalumps ");
+            }
+        };
+
+        tigger.north = pooh; // add more attributes, where we are actually storing the memory location for the other object
+
+        pooh.south = tigger;
+        pooh.east = bees;
+        pooh.west = piglet;
+        pooh.north = robin;
+
+        bees.west = pooh;
+        bees.north = rabbit;
+
+        piglet.east = pooh;
+        piglet.north = owl;
+
+        owl.south = piglet;
+        owl.east = robin;
+
+        robin.west = owl;
+        robin.north = kanga;
+        robin.east = rabbit;
+        robin.south = pooh;
+
+        rabbit.west = robin;
+        rabbit.south = bees;
+        rabbit.east = gopher;
+
+        gopher.west = rabbit;
+
+        kanga.south = robin;
+        kanga.north = eeyore;
+
+        eeyore.south = kanga;
+        eeyore.east = heffalumps;
+
+        heffalumps.west = eeyore
+
+        var player = {
+            location: tigger
+        }
+
+        function move(dirction) {
+            var dir = dirction.toLowerCase();
+
+
+            if (dir == "north") {
+                if (player.location.north == null) {
+                    console.log("There is noting ...")
+                }
+                else {
+                    player.location = player.location.north;
+                    console.log("You are North and arrive at " + player.location.character + "'s house!");
+                    player.location.greet();
+                }
+            }
+            if (dir == "south") {
+                if (player.location.south == null) {
+                    console.log("There is noting ...");
+                }
+                else {
+                    player.location = player.location.south
+                    console.log("You are South and arrive at " + player.location.character + "'s house!");
+                    player.location.greet();
+                }
+            }
+            if (dir == "east") {
+                if (player.location.east == null) {
+                    console.log("There is noting ...")
+                }
+                else {
+                    player.location = player.location.east
+                    console.log("You are East and arrive at " + player.location.character + "'s house!");
+                    player.location.greet();
+
+                }
+            }
+            if (dir == "west") {
+                if (player.location.west == null) {
+                    console.log("There is noting ...")
+                }
+                else {
+                    player.location = player.location.west
+                    console.log("You are West and arrive at " + player.location.character + "'s house!")
+                    player.location.greet();
+
+                }
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
